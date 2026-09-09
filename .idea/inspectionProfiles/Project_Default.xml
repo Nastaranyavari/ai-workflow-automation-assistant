@@ -1,0 +1,45 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="Python" />
+          <option value="TF-IDF" />
+          <option value="fastapi" />
+          <option value="uvicorn" />
+          <option value="sqlalchemy" />
+          <option value="psycopg2-binary" />
+          <option value="mlflow" />
+          <option value="transformers" />
+          <option value="datasets" />
+          <option value="pandas" />
+          <option value="numpy" />
+          <option value="python-dotenv" />
+          <option value="pydantic" />
+          <option value="accelerate" />
+          <option value="bitsandbytes" />
+          <option value="sentencepiece" />
+          <option value="protobuf" />
+          <option value="hazm" />
+          <option value="torch" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStubPackagesAdvertiser" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="pandas" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

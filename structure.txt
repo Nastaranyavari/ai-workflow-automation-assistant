@@ -1,0 +1,52 @@
+ai-workflow-automation-assistant/
+│
+├── app/
+│   ├── api/
+│   │   ├── routes.py
+│   │   └── schemas.py
+│   │
+│   ├── agent/
+│   │   ├── graph.py
+│   │   ├── planner.py
+│   │   ├── memory.py
+│   │   ├── prompts.py
+│   │   └── state.py
+│   │
+│   ├── tools/
+│   │   ├── pdf_tool.py
+│   │   ├── email_tool.py
+│   │   ├── database_tool.py
+│   │   ├── calculator_tool.py
+│   │   └── web_tool.py
+│   │
+│   ├── services/
+│   │   ├── llm.py
+│   │   ├── database.py
+│   │   └── workflow.py
+│   │
+│   ├── config.py
+│   └── main.py
+│
+├── workflows/
+│   ├── meeting_workflow.json
+│   ├── email_workflow.json
+│   └── report_workflow.json
+│
+├── ui/
+│   └── streamlit_app.py
+│
+├── database/
+│   └── assistant.db
+│
+├── docs/
+│   ├── architecture.md
+│   ├── problem_definition.md
+│   ├── workflow_design.md
+│   └── api.md
+│
+├── tests/
+├── docker/
+├── screenshots/
+├── README.md
+├── requirements.txt
+└── .env.example
