@@ -284,11 +284,13 @@ def agent_node(state: AgentState):
             {
                 "role": "user",
                 "content": (
-                    "A PDF file is available for this request. "
-                    "Use the read_pdf tool if you need to read it."
+                    f"A PDF file is available at: {state['file_path']}. "
+                    "The user wants you to process this PDF. "
+                    "Use the read_pdf tool to read the file before answering."
                 ),
             }
         )
+
 
     response = client.chat(
         messages=messages,
@@ -413,22 +415,22 @@ def tool_node(state: AgentState):
 
 def finish_node(state: AgentState):
 
-  """ notify_result = notify_n8n(
+   notify_result = notify_n8n(
         session_id=state["session_id"],
         task=state.get("task", "unknown"),
         status="completed",
         record_id=state.get("record_id"),
-    )"""
+    )
 
-  return {
-      "messages": state["messages"],
-      "file_path": state.get("file_path"),
-      "status": "completed",
-      "session_id": state["session_id"],
-      "task": state.get("task"),
-      "record_id": state.get("record_id"),
-      "n8n_result": state.get("n8n_result"),
-  }
+   return {
+        "messages": state["messages"],
+        "file_path": state.get("file_path"),
+        "status": "completed",
+        "session_id": state["session_id"],
+        "task": state.get("task"),
+        "record_id": state.get("record_id"),
+        "n8n_result": notify_result,
+    }
 
 
 # ---------------------------------------------------------

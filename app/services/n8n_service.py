@@ -33,4 +33,10 @@ def notify_n8n(
 
     response.raise_for_status()
 
-    return response.json()
+    try:
+        return response.json()
+    except ValueError:
+        return {
+            "status_code": response.status_code,
+            "text": response.text,
+        }
