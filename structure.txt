@@ -1,52 +1,68 @@
-ai-workflow-automation-assistant/
+ai-workflow-assistant/
 │
 ├── app/
 │   ├── api/
 │   │   ├── routes.py
-│   │   └── schemas.py
+│   │   └── __init__.py
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── task.py
 │   │
 │   ├── agent/
 │   │   ├── graph.py
-│   │   ├── planner.py
-│   │   ├── memory.py
-│   │   ├── prompts.py
-│   │   └── state.py
+│   │   ├── agent.py
+│   │   ├── agent_loop.py
+│   │   ├── tool_calling.py
+│   │   └── __init__.py
 │   │
 │   ├── tools/
 │   │   ├── pdf_tool.py
-│   │   ├── email_tool.py
 │   │   ├── database_tool.py
-│   │   ├── calculator_tool.py
-│   │   └── web_tool.py
+│   │   ├── calculator.py
+│   │   └── __init__.py
 │   │
 │   ├── services/
+│   │   ├── __init__.py
 │   │   ├── llm.py
-│   │   ├── database.py
-│   │   └── workflow.py
+│   │   ├── n8n_services.py
+│   │   ├── router.py
+│   │   ├── workflow.py
+│   │   └── openrouter_provider.py
 │   │
-│   ├── config.py
+│   ├── __init__.py
 │   └── main.py
 │
 ├── workflows/
-│   ├── meeting_workflow.json
-│   ├── email_workflow.json
-│   └── report_workflow.json
 │
 ├── ui/
 │   └── streamlit_app.py
 │
-├── database/
+├── data/
+│   ├── uploads/
+│   ├── checkpoints.db
+│   ├── checkpoints.db-shm
+│   ├── checkpoints.db-wal
+│   ├── sample.pdf
 │   └── assistant.db
 │
+│
 ├── docs/
-│   ├── architecture.md
-│   ├── problem_definition.md
-│   ├── workflow_design.md
-│   └── api.md
+│
+├── screenshots/
 │
 ├── tests/
-├── docker/
-├── screenshots/
+│   ├── test_calculator.py
+│   ├── test_model.py
+│   ├── test_task_analysis.py
+│   ├── test_tool_calling.py
+│
+│
+├── .env
 ├── README.md
+├── .gitignore
+├── run_agent.py
+├── run_database.py
+├── run_workflow.py
 ├── requirements.txt
 └── .env.example

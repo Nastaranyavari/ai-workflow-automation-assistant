@@ -1,30 +1,12 @@
 from pathlib import Path
 
 from fastapi import APIRouter, File, Form, UploadFile
-from pydantic import BaseModel
 
-from app.services.llm import analyze_request
 from app.agent.graph import graph
 
 
 router = APIRouter()
 
-
-class AssistantRequest(BaseModel):
-    session_id: str
-    message: str
-    file_path: str | None = None
-
-
-class AnalyzeRequest(BaseModel):
-    message: str
-
-
-@router.post("/analyze")
-def analyze(request: AnalyzeRequest):
-    result = analyze_request(request.message)
-
-    return result
 
 
 @router.post("/assistant")
