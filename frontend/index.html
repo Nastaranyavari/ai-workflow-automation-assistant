@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nex AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- Future sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <h2>دستیار هوش مصنوعی</h2>
+                    <span>فضای آینده پروژه</span>
+                </div>
+
+                <button class="menu-button" type="button" aria-label="منو">
+                    ☰
+                </button>
+            </div>
+
+            <div class="sidebar-placeholder">
+                <span>بخش آینده</span>
+            </div>
+        </aside>
+
+        <!-- Main chat -->
+        <main class="chat-panel">
+
+            <header class="chat-header">
+                <div>
+                    <h1>دستیار هوش مصنوعی</h1>
+                    <p>من اینجا هستم تا به شما کمک کنم.</p>
+                </div>
+            </header>
+
+            <section class="chat-area" id="chatArea">
+                <div class="welcome">
+                    <h2>سلام! 👋</h2>
+                    <p>
+                        من دستیار هوش مصنوعی شما هستم.
+                        <br>
+                        هر سوالی دارید بپرسید یا یک فایل PDF آپلود کنید.
+                    </p>
+                </div>
+            </section>
+
+            <section class="composer">
+                <textarea
+                    id="message"
+                    placeholder="پیام خود را بنویسید..."
+                    rows="3"
+                ></textarea>
+
+                <div class="composer-footer">
+
+                    <div class="upload-area">
+                        <label for="fileInput" class="upload-button">
+                            <span class="paperclip">📎</span>
+                            <span>آپلود فایل</span>
+                        </label>
+
+                        <input
+                            type="file"
+                            id="fileInput"
+                            accept=".pdf,application/pdf"
+                            hidden
+                        >
+
+                        <div class="file-info" id="fileInfo">
+                            حداکثر حجم: 20MB
+                        </div>
+                    </div>
+
+                    <button id="sendButton" class="send-button" type="button">
+                        ارسال
+                        <span>➤</span>
+                    </button>
+
+                </div>
+            </section>
+
+            <p class="disclaimer">
+                دستیار هوش مصنوعی ممکن است اشتباه کند؛ اطلاعات مهم را مجدداً بررسی کنید.
+            </p>
+
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -355,9 +355,8 @@ graph_builder.add_edge(
 # Persistent Checkpointer
 # ---------------------------------------------------------
 
-CHECKPOINT_DB = Path(
-    "data/checkpoints.db"
-)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+CHECKPOINT_DB = PROJECT_ROOT / "data" / "checkpoints.db"
 
 CHECKPOINT_DB.parent.mkdir(
     parents=True,

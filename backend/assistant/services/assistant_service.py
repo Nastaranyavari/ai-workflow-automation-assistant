@@ -2,12 +2,13 @@ from pathlib import Path
 
 from app.agent.graph import graph
 
+from assistant.models import Document
 
 class AssistantService:
 
     @staticmethod
     def save_uploaded_file(file):
-        upload_dir = Path("data/uploads")
+        upload_dir = Path(__file__).resolve().parents[3] / "data" / "uploads"
         upload_dir.mkdir(
             parents=True,
             exist_ok=True,
@@ -32,6 +33,11 @@ class AssistantService:
 
         if file:
             file_path = AssistantService.save_uploaded_file(file)
+
+            Document.objects.create(
+                filename=file.name,
+                file_path=str(file_path),
+            )
 
         input_state = {
             "messages": [

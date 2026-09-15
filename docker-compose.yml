@@ -8,6 +8,8 @@ services:
       - .env
     volumes:
       - ./data:/app/data
+    depends_on:
+      - db
 
   frontend:
     build: .
@@ -21,3 +23,19 @@ services:
       - ./data:/app/data
     depends_on:
       - backend
+
+  db:
+    image: postgres:16
+    container_name: ai_workflow_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ai_workflow
+      POSTGRES_USER: ai_user
+      POSTGRES_PASSWORD: ai_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
